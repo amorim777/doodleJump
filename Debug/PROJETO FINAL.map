@@ -1,0 +1,422 @@
+******************************************************************************
+                  TI ARM Linker PC v18.1.5                     
+******************************************************************************
+>> Linked Sun Jun 30 12:52:21 2019
+
+OUTPUT FILE NAME:   <PROJETO FINAL.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00001b29
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  000029b7  0003d649  R  X
+  SRAM                  20000000   00008000  000004ac  00007b54  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    000029b8   000029b8    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00001a62   00001a62    r-x .text
+  00001cce    00001cce    00000c61   00000c61    r-- .const
+  00002930    00002930    00000088   00000088    r-- .cinit
+20000000    20000000    000004ac   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    000001fc   00000000    rw- .bss
+  200003fc    200003fc    000000b0   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00001a62     
+                  0000026c    00000b00     Nokia5110.obj (.text)
+                  00000d6c    00000914     jogo.obj (.text)
+                  00001680    00000132     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  000017b2    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.text:_nop)
+                  000017b4    000000f4     driverlib.lib : sysctl.obj (.text:SysCtlClockSet)
+                  000018a8    000000e4     botoes.obj (.text)
+                  0000198c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00001a28    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00001a90    00000054     main.obj (.text)
+                  00001ae4    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00001b28    00000038                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00001b60    00000034     driverlib.lib : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  00001b94    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : rand.c.obj (.text:rand)
+                  00001bc8    0000002a     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  00001bf2    00000002     --HOLE-- [fill = 0]
+                  00001bf4    00000024     rtsv7M4_T_le_v4SPD16_eabi.lib : rand.c.obj (.text:srand)
+                  00001c18    00000018     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  00001c30    00000014                   : systick.obj (.text:SysTickEnable)
+                  00001c44    00000014                   : systick.obj (.text:SysTickIntEnable)
+                  00001c58    00000012                   : gpio.obj (.text:GPIOPinTypeGPIOInput)
+                  00001c6a    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00001c7c    00000010     driverlib.lib : systick.obj (.text:SysTickPeriodSet)
+                  00001c8c    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00001c9a    00000002     --HOLE-- [fill = 0]
+                  00001c9c    0000000c     driverlib.lib : systick.obj (.text:SysTickValueGet)
+                  00001ca8    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00001cb4    00000006     driverlib.lib : gpio.obj (.text:GPIOPinRead)
+                  00001cba    00000006                   : gpio.obj (.text:GPIOPinWrite)
+                  00001cc0    00000006                   : sysctl.obj (.text:SysCtlDelay)
+                  00001cc6    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00001cca    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00001cce    00000c61     
+                  00001cce    000001f8     jogo.obj (.const:.string:help_Bitmap)
+                  00001ec6    000001f8     jogo.obj (.const:.string:home2_Bitmap)
+                  000020be    000001f8     jogo.obj (.const:.string:home3_Bitmap)
+                  000022b6    000001f8     jogo.obj (.const:.string:home_Bitmap)
+                  000024ae    000001e0     Nokia5110.obj (.const:ASCII)
+                  0000268e    000000ba     jogo.obj (.const:.string:pula_doodle_Bitmap)
+                  00002748    00000090     jogo.obj (.const:.string:morreu_Bitmap)
+                  000027d8    00000070     Nokia5110.obj (.const:.string:$P$T0$1)
+                  00002848    00000060     jogo.obj (.const:.string:restart_Bitmap)
+                  000028a8    0000001a     jogo.obj (.const:.string:open_doodle2_Bitmap)
+                  000028c2    0000001a     jogo.obj (.const:.string:open_doodle_Bitmap)
+                  000028dc    0000000f     jogo.obj (.const:.string:score_Bitmap)
+                  000028eb    00000008     Nokia5110.obj (.const:.string:Masks)
+                  000028f3    00000006     jogo.obj (.const:.string:base_Bitmap)
+                  000028f9    00000005     jogo.obj (.const:.string:num0)
+                  000028fe    00000005     jogo.obj (.const:.string:num1)
+                  00002903    00000005     jogo.obj (.const:.string:num2)
+                  00002908    00000005     jogo.obj (.const:.string:num3)
+                  0000290d    00000005     jogo.obj (.const:.string:num4)
+                  00002912    00000005     jogo.obj (.const:.string:num5)
+                  00002917    00000005     jogo.obj (.const:.string:num6)
+                  0000291c    00000005     jogo.obj (.const:.string:num7)
+                  00002921    00000005     jogo.obj (.const:.string:num8)
+                  00002926    00000005     jogo.obj (.const:.string:num9)
+                  0000292b    00000004     jogo.obj (.const:.string:barra0_Bitmap)
+
+.cinit     0    00002930    00000088     
+                  00002930    0000005e     (.cinit..data.load) [load image, compression = lzss]
+                  0000298e    00000002     --HOLE-- [fill = 0]
+                  00002990    0000000c     (__TI_handler_table)
+                  0000299c    00000004     --HOLE-- [fill = 0]
+                  000029a0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  000029a8    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.bss       0    20000200    000001fc     UNINITIALIZED
+                  20000200    000001f8     (.common:Screen)
+                  200003f8    00000004     jogo.obj (.bss)
+
+.data      0    200003fc    000000b0     UNINITIALIZED
+                  200003fc    0000004c     jogo.obj (.data)
+                  20000448    00000028     jogo.obj (.data:vet_num_Bitmap)
+                  20000470    00000028     jogo.obj (.data:x_y_barra)
+                  20000498    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.c.obj (.data:$O1$$)
+                  200004a0    00000008     jogo.obj (.data:doodle)
+                  200004a8    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : rand.c.obj (.data)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       jogo.obj                       2324   2569      168    
+       Nokia5110.obj                  2816   600       504    
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       botoes.obj                     228    0         0      
+       main.obj                       84     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         5464   3789      672    
+                                                              
+    C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib
+       gpio.obj                       402    0         0      
+       sysctl.obj                     302    0         0      
+       systick.obj                    68     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         772    0         0      
+                                                              
+    C:\ti\ccsv8\tools\compiler\ti-cgt-arm_18.1.5.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj              156    0         0      
+       copy_decompress_lzss.c.obj     104    0         0      
+       rand.c.obj                     88     0         4      
+       autoinit.c.obj                 68     0         0      
+       boot_cortex_m.c.obj            56     0         0      
+       copy_zero_init.c.obj           18     0         0      
+       copy_decompress_none.c.obj     14     0         0      
+       _lock.c.obj                    2      0         8      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         514    0         12     
+                                                              
+       Stack:                         0      0         512    
+       Linker Generated:              0      130       0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   6750   3919      1196   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 000029a8 records: 2, size/record: 8, table size: 16
+	.data: load addr=00002930, load size=0000005e bytes, run addr=200003fc, run size=000000b0 bytes, compression=lzss
+	.bss: load addr=000029a0, load size=00000008 bytes, run addr=20000200, run size=000001fc bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002990 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00001ccb  C$$EXIT                       
+00001bc9  GPIODirModeSet                
+00001681  GPIOPadConfigSet              
+00001cb5  GPIOPinRead                   
+00001c59  GPIOPinTypeGPIOInput          
+00001c19  GPIOPinTypeGPIOOutput         
+00001cbb  GPIOPinWrite                  
+00001a91  HandlerSysTick                
+000028eb  Masks                         
+000006b5  Nokia5110_Clear               
+00000911  Nokia5110_ClearBuffer         
+00000945  Nokia5110_ClrPxl              
+0000093b  Nokia5110_DisplayBuffer       
+000006e5  Nokia5110_DrawFullImage       
+00000bbb  Nokia5110_DrawImage           
+00000c05  Nokia5110_DrawImage_status    
+000002db  Nokia5110_Init                
+000003f5  Nokia5110_OutChar             
+00000435  Nokia5110_OutString           
+00000461  Nokia5110_OutUDec             
+0000072d  Nokia5110_PrintBMP            
+0000099d  Nokia5110_PrintBMP2           
+00000665  Nokia5110_SetCursor           
+00000977  Nokia5110_SetPxl              
+00000a55  Nokia5110_SetPxl_status       
+00000a81  Nokia5110_img                 
+00000b21  Nokia5110_img_16              
+00001ca9  ResetISR                      
+20000200  Screen                        
+000017b5  SysCtlClockSet                
+00001cc1  SysCtlDelay                   
+00001b61  SysCtlPeripheralEnable        
+00001c31  SysTickEnable                 
+00001c45  SysTickIntEnable              
+00001c7d  SysTickPeriodSet              
+00001c9d  SysTickValueGet               
+00000d3d  VerificaBufferPixel           
+20000200  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000200  __STACK_TOP                   
+000029a8  __TI_CINIT_Base               
+000029b8  __TI_CINIT_Limit              
+00002990  __TI_Handler_Table_Base       
+0000299c  __TI_Handler_Table_Limit      
+00001ae5  __TI_auto_init_nobinit_nopinit
+00001a29  __TI_decompress_lzss          
+00001c8d  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00001c6b  __TI_zero_init_nomemset       
+0000198d  __aeabi_memcpy                
+0000198d  __aeabi_memcpy4               
+0000198d  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000000  __stack                       
+00001b29  _c_int00_noargs               
+20000498  _lock                         
+000017b3  _nop                          
+UNDEFED   _system_post_cinit            
+00001cc7  _system_pre_init              
+2000049c  _unlock                       
+00001125  abaixa                        
+00001ccb  abort                         
+00001399  background                    
+0000292b  barra0_Bitmap                 
+000028f3  base_Bitmap                   
+ffffffff  binit                         
+000018d9  config_buttons                
+000018a9  destrava_pino                 
+200004a0  doodle                        
+00000000  g_pfnVectors                  
+00001cce  help_Bitmap                   
+00001ec6  home2_Bitmap                  
+000020be  home3_Bitmap                  
+000022b6  home_Bitmap                   
+00000d6f  loading                       
+00001a99  main                          
+0000198d  memcpy                        
+00000e45  menu                          
+00001229  morreu                        
+00002748  morreu_Bitmap                 
+00000f3f  mov_direita                   
+00000f27  mov_esquerda                  
+000028f9  num0                          
+000028fe  num1                          
+00002903  num2                          
+00002908  num3                          
+0000290d  num4                          
+00002912  num5                          
+00002917  num6                          
+0000291c  num7                          
+00002921  num8                          
+00002926  num9                          
+00000d6d  ope                           
+000028a8  open_doodle2_Bitmap           
+000028c2  open_doodle_Bitmap            
+00000edd  pisca_help                    
+00000e9d  pisca_play                    
+000012bd  pula                          
+0000268e  pula_doodle_Bitmap            
+00001b95  rand                          
+00002848  restart_Bitmap                
+000028dc  score_Bitmap                  
+00001bf5  srand                         
+0000191f  start_buttons                 
+000015c1  start_game                    
+00000f1d  start_help                    
+00000f57  trataBotoes                   
+00000fd9  verificaCHAO                  
+20000448  vet_num_Bitmap                
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+000002db  Nokia5110_Init                
+000003f5  Nokia5110_OutChar             
+00000435  Nokia5110_OutString           
+00000461  Nokia5110_OutUDec             
+00000665  Nokia5110_SetCursor           
+000006b5  Nokia5110_Clear               
+000006e5  Nokia5110_DrawFullImage       
+0000072d  Nokia5110_PrintBMP            
+00000911  Nokia5110_ClearBuffer         
+0000093b  Nokia5110_DisplayBuffer       
+00000945  Nokia5110_ClrPxl              
+00000977  Nokia5110_SetPxl              
+0000099d  Nokia5110_PrintBMP2           
+00000a55  Nokia5110_SetPxl_status       
+00000a81  Nokia5110_img                 
+00000b21  Nokia5110_img_16              
+00000bbb  Nokia5110_DrawImage           
+00000c05  Nokia5110_DrawImage_status    
+00000d3d  VerificaBufferPixel           
+00000d6d  ope                           
+00000d6f  loading                       
+00000e45  menu                          
+00000e9d  pisca_play                    
+00000edd  pisca_help                    
+00000f1d  start_help                    
+00000f27  mov_esquerda                  
+00000f3f  mov_direita                   
+00000f57  trataBotoes                   
+00000fd9  verificaCHAO                  
+00001125  abaixa                        
+00001229  morreu                        
+000012bd  pula                          
+00001399  background                    
+000015c1  start_game                    
+00001681  GPIOPadConfigSet              
+000017b3  _nop                          
+000017b5  SysCtlClockSet                
+000018a9  destrava_pino                 
+000018d9  config_buttons                
+0000191f  start_buttons                 
+0000198d  __aeabi_memcpy                
+0000198d  __aeabi_memcpy4               
+0000198d  __aeabi_memcpy8               
+0000198d  memcpy                        
+00001a29  __TI_decompress_lzss          
+00001a91  HandlerSysTick                
+00001a99  main                          
+00001ae5  __TI_auto_init_nobinit_nopinit
+00001b29  _c_int00_noargs               
+00001b61  SysCtlPeripheralEnable        
+00001b95  rand                          
+00001bc9  GPIODirModeSet                
+00001bf5  srand                         
+00001c19  GPIOPinTypeGPIOOutput         
+00001c31  SysTickEnable                 
+00001c45  SysTickIntEnable              
+00001c59  GPIOPinTypeGPIOInput          
+00001c6b  __TI_zero_init_nomemset       
+00001c7d  SysTickPeriodSet              
+00001c8d  __TI_decompress_none          
+00001c9d  SysTickValueGet               
+00001ca9  ResetISR                      
+00001cb5  GPIOPinRead                   
+00001cbb  GPIOPinWrite                  
+00001cc1  SysCtlDelay                   
+00001cc7  _system_pre_init              
+00001ccb  C$$EXIT                       
+00001ccb  abort                         
+00001cce  help_Bitmap                   
+00001ec6  home2_Bitmap                  
+000020be  home3_Bitmap                  
+000022b6  home_Bitmap                   
+0000268e  pula_doodle_Bitmap            
+00002748  morreu_Bitmap                 
+00002848  restart_Bitmap                
+000028a8  open_doodle2_Bitmap           
+000028c2  open_doodle_Bitmap            
+000028dc  score_Bitmap                  
+000028eb  Masks                         
+000028f3  base_Bitmap                   
+000028f9  num0                          
+000028fe  num1                          
+00002903  num2                          
+00002908  num3                          
+0000290d  num4                          
+00002912  num5                          
+00002917  num6                          
+0000291c  num7                          
+00002921  num8                          
+00002926  num9                          
+0000292b  barra0_Bitmap                 
+00002990  __TI_Handler_Table_Base       
+0000299c  __TI_Handler_Table_Limit      
+000029a8  __TI_CINIT_Base               
+000029b8  __TI_CINIT_Limit              
+20000000  __stack                       
+20000200  Screen                        
+20000200  __STACK_END                   
+20000200  __STACK_TOP                   
+20000448  vet_num_Bitmap                
+20000498  _lock                         
+2000049c  _unlock                       
+200004a0  doodle                        
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[114 symbols]
